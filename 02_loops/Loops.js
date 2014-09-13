@@ -26,27 +26,6 @@ var sum=function(arr){
 
 var paramify= function(hash){
 	
-	// try print function seperately. doesn't work
-	/*
-	var print = function(arr, ob){
-		var str=""
-		for (i=0; i<arr.length; i++) {
-			str= str + arr[i]+ "=" + ob[arr[i]] +"&"
-		}
-		//str= str.substring(0, str.length-1)
-		return str;
-	}*/
-	// try sortProperty function. doesn't work
-	/* var sortProperty =function(ob){
-		var arr=[]
-		for (x in ob){
-			arr.push (ob.x)
-		}
-		arr.sort()
-		return arr;
-	} */
-	
-
 	if (Object.keys(hash).length===0 ) {return ""} 
 	 	else {
 	 		var arr=[]
