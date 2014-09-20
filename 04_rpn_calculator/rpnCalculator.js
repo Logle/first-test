@@ -50,3 +50,15 @@ function Calculator(){
 		
 	}
 }
+
+// alternative writing using prototype
+// Calculator.prototype.push = function(){} ---> don't use Caculator.prototype since it replaces all prototype
+// Calculator.prototype.plus = function(){}
+// Functional programming: Caculator.prototype.popandComputer = function(operatorFunction){}
+/*
+
+function(CP){	
+}(Calculator.prototype)
+
+*/
+

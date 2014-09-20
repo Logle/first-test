@@ -24,15 +24,17 @@ var sum=function(arr){
 	return total
 }
 
+// while (i--) {sum+=arr[i]}
+
 var paramify= function(hash){
 	
 	if (Object.keys(hash).length===0 ) {return ""} 
 	 	else {
 	 		var arr=[]
 			for (x in hash){ if (hash.hasOwnProperty(x)) {arr.push (x)} }
-			arr.sort()
+			arr.sort()  //short the array
 			var str=""
-			
+			// adding the array together
 			for (i=0; i<arr.length; i++) {
 			str= str + arr[i]+ "=" + hash[arr[i]] +"&"
 			}	
@@ -56,7 +58,7 @@ var concat_string= function(arg){
 	return final 
 	
 }
-
+// function concat_string(){return join(arguements,"")}
 
 
 

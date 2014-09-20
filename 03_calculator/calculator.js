@@ -1,14 +1,16 @@
 
 
-function Calculator() {
-	var current = 0
-	this.value = function() {return current }
-	this.add = function(x){
-		current += x
-		return current
-	}
-	this.subtract = function(x){
-		current -= x
-		return current
-	};
-}
+
+// learn to use prototype
+ function Calculator(){
+ 	this.currentValue=0;
+ };
+ 
+ Calculator.prototype.value = function() {return this.currentValue;}
+ Calculator.prototype.add = function(x){
+ 	this.currentValue += x ;
+ }
+ Calculator.prototype.subtract = function(x){
+ 	this.currentValue -= x;
+ }
+

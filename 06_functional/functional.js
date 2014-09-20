@@ -8,16 +8,20 @@ function countWords(string){
 	return count
 } 
 
+// return string.split(" ").length
 
 function makeAdder(x) {
   return function(y) {
     return x + y;
   };
 }
+// closure
 
 function forEach(array,action){
 	for (var i=0;i<array.length; i++) {action(array[i])}
 }
+
+//  for (var i=0, n=arr.length; i<n; i++){}
 
 function map(array,action){
 	var result=[]
