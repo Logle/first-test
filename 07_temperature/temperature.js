@@ -22,3 +22,5 @@ var Temperature = function (value){
 		currentC = value;
 	}
 }
+
+// should use Prototype of setFahrenheit and setCelcius

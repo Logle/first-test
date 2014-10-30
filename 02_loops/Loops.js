@@ -1,64 +1,69 @@
-var repeat= function(str,count){
-	var finalstr=""
-	for (i=0; i<count; i++){
-		finalstr=finalstr+str
+var repeat = function(str,count){
+	var finalstr="";
+	for (var i=0; i<count; i++){
+		finalstr += str;
 	}
-	return finalstr
+	return finalstr;
 }
 
 
-var join= function(arr, ins){
-	var finalstr=""
-	for (i=0; i<arr.length; i++){
-		finalstr = finalstr+ arr[i].toString()
-		if  ((ins==="/")&&( i+1 != arr.length) ) {finalstr += ins} 
+var join = function(arr, ins){
+	var finalstr="";
+	if (ins===undefined) {
+		ins = "";
 	}
-	return finalstr	
+	finalstr = arr.join(ins);
+	return finalstr;	
 }
 
-var sum=function(arr){
-	var total=0
+var sum = function(arr){
+	var total=0;
+	var i;
 	for (i=0; i<arr.length; i++){
 		total += arr[i]
 	}
-	return total
+	return total;
 }
 
 // while (i--) {sum+=arr[i]}
 
-var paramify= function(hash){
+var paramify = function(hash){
 	
 	if (Object.keys(hash).length===0 ) {return ""} 
 	 	else {
-	 		var arr=[]
-			for (x in hash){ if (hash.hasOwnProperty(x)) {arr.push (x)} }
-			arr.sort()  //short the array
-			var str=""
+	 		var arr=[];
+	 		var str="";
+	 		var i;
+			for (x in hash){ 
+				if (hash.hasOwnProperty(x)) {arr.push(x)} 
+			}
+			arr.sort(); 
+			
 			// adding the array together
-			for (i=0; i<arr.length; i++) {
-			str= str + arr[i]+ "=" + hash[arr[i]] +"&"
+			for (i=0; i<arr.length; i++){
+				str = str + arr[i]+ "=" + hash[arr[i]] +"&"
 			}	
-			str= str.substring(0, str.length-1)
-			return str ;	
+			return str.substring(0, str.length-1);	
 	 	} 
 }
 
-var factorial= function(number){
-	var count = 1 ;
-	 if (number > 0){
-		for (i=1; i<=number; i++){ count= count*i }		
-	} ;
-	return count ; 
+var factorial = function(number){
+	if (number === 0) return 1
+		else return number*factorial(number-1);
 }
 
-var concat_string= function(arg){
-	var args =[]
-	for (i=0; i<arguments.length; i++) {args[i]=arguments[i]}  	
-	var final = args.join ("")
-	return final 
-	
+var concat_string = function(string){
+	var i;
+	var a=[];
+	for (i=0; i<arguments.length; i++){
+		a[i]= arguments[i];
+	}  // arguments is not a proper array
+	return a.join("");
 }
-// function concat_string(){return join(arguements,"")}
+
+// function concat_string(){
+// 	return join(arguments,"");
+// };
 
 
 

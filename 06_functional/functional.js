@@ -1,14 +1,14 @@
 function countWords(string){
-	var count=1
-	for (i=0; i<string.length; i++){
-		if (string[i]===" "){
-			count++
-		}
-	}
-	return count
+	// var count=1;
+	// var i;
+	// for (i=0; i<string.length; i++){
+	// 	if (string[i]===" "){
+	// 		count++;
+	// 	}
+	// }
+	// return count;
+	return string.split(" ").length;
 } 
-
-// return string.split(" ").length
 
 function makeAdder(x) {
   return function(y) {
@@ -18,57 +18,65 @@ function makeAdder(x) {
 // closure
 
 function forEach(array,action){
-	for (var i=0;i<array.length; i++) {action(array[i])}
+	for (var i=0; i<array.length; i++){
+		action(array[i]);
+	}
 }
 
 //  for (var i=0, n=arr.length; i<n; i++){}
-
 function map(array,action){
 	var result=[]
-	for (var i=0;i<array.length; i++) {result[i] = action(array[i])}
+	for (var i=0;i<array.length; i++){
+		result[i] = action(array[i]);
+	};
 	return result ;	
 }
 
 function filter(array,action){
-	var result=[]
-	for (var i=0;i<array.length; i++) { 
-		if ( action(array[i]) ) {result.push(array[i])}
-	}
-	return result ;	
+	var result=[];
+	for (var i=0; i<array.length; i++) { 
+		if (action(array[i])){
+			result.push(array[i]);
+		};
+	};
+	return result;	
 }
 
 function contains(obj,member){
 	for (var i in obj) { 
-		if (obj.hasOwnProperty(i) && obj[i] === member ) 
-			{return true}
-	}
-	return false ;	
+		if (obj.hasOwnProperty(i) && obj[i] === member ){
+			return true
+		};
+	};
+	return false;	
 }
 
 function countWordsInReduce(a,b){
-	return countWords(a) +b ;
+	return countWords(a)+b;
 }
 
 function reduce(array,start,action){
 	var current = start;
-  	for (var i = 0; i < array.length; i++) current = action(array[i], current);
-  	return current;
+  	for (var i = 0; i<array.length; i++){
+  		current = action(array[i], current); 
+  	};
+  return current;
 }
 
-
 function sum(array){
-	return reduce(array,0, function(a,b){ return a+b })
+	return reduce(array,0, function(a,b){return a+b});
 }
 
 function every(array,action){
 	if (array.length===0) return true
-		else{
+		else {
 			for (i=0; i<array.length; i++){
-				if (action(array[i]) !=true) return false
+				if (!action(array[i])) return false
 			}
-		return true
-		} 
+		return true;
+		}; 
 }
+
 function any(array,action){
 	if (array.length===0) return false
 		else{
@@ -77,25 +85,27 @@ function any(array,action){
 					if (array[i] ===true) return true
 					}
 			} else{
-				for (i=0; i<array.length; i++){
+		for (i=0; i<array.length; i++){
 					if (action(array[i]) ===true) return true
 					}	
 			}			
-		return false	
+		return false;	
 		} 
 }
 
 function once(action) {
     var executed = false;
     return function () { 
-    	if(!executed) { executed = true; action() }
+    	if(!executed){ 
+    		executed = true; action(); 
+    	};
     };
-};
+};  // closure
 
 function wrapper(f1,f2){
-	var x = function(){return f1();};
-  	final = function(){return f2(x);};
-  	return final;
+	var x = function(){return f1()};
+  final = function(){return f2(x)};
+  return final;
 }	
 
 

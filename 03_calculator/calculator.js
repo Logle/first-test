@@ -2,11 +2,13 @@
 
 
 // learn to use prototype
- function Calculator(){
+var Calculator = function(){
  	this.currentValue=0;
  };
  
- Calculator.prototype.value = function() {return this.currentValue;}
+ Calculator.prototype.value = function(){
+ 	return this.currentValue;
+ }
  Calculator.prototype.add = function(x){
  	this.currentValue += x ;
  }
